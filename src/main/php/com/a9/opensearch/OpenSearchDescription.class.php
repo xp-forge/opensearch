@@ -9,7 +9,7 @@
     'com.a9.opensearch.OpenSearchImage', 
     'com.a9.opensearch.OpenSearchQuery',
     'com.a9.opensearch.SyndicationRight', 
-    'lang.Collection',
+    'util.collections.Vector',
     'lang.types.ArrayList'
   );
 
@@ -43,8 +43,8 @@
      *
      */
     public function __construct() {
-      $this->urls= Collection::forClass('com.a9.opensearch.OpenSearchUrl');
-      $this->queries= Collection::forClass('com.a9.opensearch.OpenSearchQuery');
+      $this->urls= create('new util.collections.Vector<com.a9.opensearch.OpenSearchUrl>');
+      $this->queries= create('new util.collections.Vector<com.a9.opensearch.OpenSearchQuery>');
     }
 
     /**
@@ -261,16 +261,18 @@
      * Set query
      *
      * @param   com.a9.opensearch.OpenSearchQuery query
+     * @return  com.a9.opensearch.OpenSearchQuery The added query
      */
     #[@xmlmapping(element= 's:Query', class= 'com.a9.opensearch.OpenSearchQuery')]
     public function addQuery($query) {
       $this->queries->add($query);
+      return $query;
     }
 
     /**
      * Get query
      *
-     * @return  lang.Collection<com.a9.opensearch.OpenSearchQuery>
+     * @return  util.collections.Vector<com.a9.opensearch.OpenSearchQuery>
      */
     #[@xmlfactory(element= 's:Query')]
     public function getQueries() {
@@ -280,7 +282,7 @@
     /**
      * Set queries
      *
-     * @param   lang.Collection<com.a9.opensearch.OpenSearchQuery> queries
+     * @param   util.collections.Vector<com.a9.opensearch.OpenSearchQuery> queries
      */
     public function setQueries($queries) {
       $this->queries= $queries;
@@ -396,13 +398,13 @@
     #[@xmlmapping(element= 's:Url', class= 'com.a9.opensearch.OpenSearchUrl')]
     public function addUrl($url) {
       $this->urls->add($url);
-      return $urk;
+      return $url;
     }
 
     /**
      * Set urls
      *
-     * @param   lang.Collection<com.a9.opensearch.OpenSearchUrl> urls
+     * @param   util.collections.Vector<com.a9.opensearch.OpenSearchUrl> urls
      */
     public function setUrls($urls) {
       $this->urls= $urls;
@@ -439,7 +441,7 @@
     /**
      * Get urls
      *
-     * @return   lang.Collection<com.a9.opensearch.OpenSearchUrl> urls
+     * @return   util.collections.Vector<com.a9.opensearch.OpenSearchUrl> urls
      */
     #[@xmlfactory(element= 's:Url')]
     public function getUrls() {
