@@ -313,7 +313,7 @@ class OpenSearchDescription extends \lang\Object {
   #[@xmlmapping(element= 's:AdultContent')]
   public function setAdultContent($adultContent) {
     if (is_string($adultContent)) {
-      $this->adultContent= !in_array($adultContent, array('false', '0', 'no'));
+      $this->adultContent= !in_array($adultContent, ['false', '0', 'no']);
     } else {
       $this->adultContent= (bool)$adultContent;
     }
