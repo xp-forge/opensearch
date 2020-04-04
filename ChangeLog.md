@@ -6,7 +6,7 @@ opensearch ChangeLog
 ## 4.0.0 / 2020-04-04
 
 * Made compatible with XP 10 - @thekid
-* **Heads up: Dropped PHP 5.5 support** - min. PHP 5.6 required now
+* **Heads up: Dropped PHP 5 support** - min. PHP 7.0 required now
   (@thekid)
 
 ## 3.0.0 / 2015-12-20
