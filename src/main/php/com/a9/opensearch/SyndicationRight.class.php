@@ -26,7 +26,7 @@
  *
  * @see   xp://com.a9.opensearch.OpenSearchDescription#setSyndicationRight
  */
-class SyndicationRight extends \lang\Object {
+class SyndicationRight {
   const
     IS_OPEN    = 'open',
     IS_LIMITED = 'limited',

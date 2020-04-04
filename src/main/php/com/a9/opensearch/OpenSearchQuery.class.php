@@ -5,8 +5,8 @@
  *
  * @see      xp://com.a9.opensearch.OpenSearchDescription
  */
-#[@xmlns(s= 'http://a9.com/-/spec/opensearch/1.1/')]
-class OpenSearchQuery extends \lang\Object {
+#[@xmlns(['s' => 'http://a9.com/-/spec/opensearch/1.1/'])]
+class OpenSearchQuery {
   protected
     $role        = null,
     $searchTerms = null;

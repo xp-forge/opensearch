@@ -5,8 +5,8 @@
  *
  * @see      xp://com.a9.opensearch.OpenSearchDescription
  */
-#[@xmlns(s= 'http://a9.com/-/spec/opensearch/1.1/')]
-class OpenSearchUrl extends \lang\Object {
+#[@xmlns(['s' => 'http://a9.com/-/spec/opensearch/1.1/'])]
+class OpenSearchUrl {
   protected
     $type       = '',
     $template   = '';
@@ -27,7 +27,7 @@ class OpenSearchUrl extends \lang\Object {
    *
    * @param   string type
    */
-  #[@xmlmapping(element= '@type')]
+  #[@xmlmapping(['element' => '@type'])]
   public function setType($type) {
     $this->type= $type;
   }
@@ -37,7 +37,7 @@ class OpenSearchUrl extends \lang\Object {
    *
    * @return  string
    */
-  #[@xmlfactory(element= '@type')]
+  #[@xmlfactory(['element' => '@type'])]
   public function getType() {
     return $this->type;
   }
@@ -47,7 +47,7 @@ class OpenSearchUrl extends \lang\Object {
    *
    * @param   string template
    */
-  #[@xmlmapping(element= '@template')]
+  #[@xmlmapping(['element' => '@template'])]
   public function setTemplate($template) {
     $this->template= $template;
   }
@@ -57,7 +57,7 @@ class OpenSearchUrl extends \lang\Object {
    *
    * @return  string
    */
-  #[@xmlfactory(element= '@template')]
+  #[@xmlfactory(['element' => '@template'])]
   public function getTemplate() {
     return $this->template;
   }
