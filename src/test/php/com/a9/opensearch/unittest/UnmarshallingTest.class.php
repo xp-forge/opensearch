@@ -1,9 +1,9 @@
 <?php namespace com\a9\opensearch\unittest;
 
-use xml\meta\Unmarshaller;
-use xml\parser\StringInputSource;
 use com\a9\opensearch\OpenSearchDescription;
 use com\a9\opensearch\OpenSearchUrl;
+use xml\meta\Unmarshaller;
+use xml\parser\StringInputSource;
 
 /**
  * End-to-end API usage test
@@ -20,7 +20,7 @@ class UnmarshallingTest extends \unittest\TestCase {
    */
   protected function unmarshal($fixture) {
     return (new Unmarshaller())->unmarshalFrom(
-      new StringInputSource($this->getClass()->getPackage()->getResource($fixture.'.xml')),
+      new StringInputSource(typeof($this)->getPackage()->getResource($fixture.'.xml')),
       OpenSearchDescription::class
     );
   }
