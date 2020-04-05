@@ -3,6 +3,11 @@ opensearch ChangeLog
 
 ## ?.?.? / ????-??-??
 
+## 4.0.1 / 2020-04-05
+
+* Implemented RFC #335: Remove deprecated key/value pair annotation syntax
+  (@thekid)
+
 ## 4.0.0 / 2020-04-04
 
 * Made compatible with XP 10 - @thekid

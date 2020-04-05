@@ -33,7 +33,7 @@ class OpenSearchImage {
    *
    * @param   string type
    */
-  #[@xmlmapping(element= '@type')]
+  #[@xmlmapping(['element' => '@type'])]
   public function setType($type) {
     $this->type= $type;
   }
@@ -43,7 +43,7 @@ class OpenSearchImage {
    *
    * @return  string
    */
-  #[@xmlfactory(element= '@type')]
+  #[@xmlfactory(['element' => '@type'])]
   public function getType() {
     return $this->type;
   }
@@ -53,7 +53,7 @@ class OpenSearchImage {
    *
    * @param   int width
    */
-  #[@xmlmapping(element= '@width', type= 'int')]
+  #[@xmlmapping(['element' => '@width', 'type' => 'int'])]
   public function setWidth($width) {
     $this->width= $width;
   }
@@ -63,7 +63,7 @@ class OpenSearchImage {
    *
    * @return  int
    */
-  #[@xmlfactory(element= '@width')]
+  #[@xmlfactory(['element' => '@width'])]
   public function getWidth() {
     return $this->width;
   }
@@ -73,7 +73,7 @@ class OpenSearchImage {
    *
    * @param   int height
    */
-  #[@xmlmapping(element= '@height', type= 'int')]
+  #[@xmlmapping(['element' => '@height'], type= 'int')]
   public function setHeight($height) {
     $this->height= $height;
   }
@@ -83,7 +83,7 @@ class OpenSearchImage {
    *
    * @return  int
    */
-  #[@xmlfactory(element= '@height')]
+  #[@xmlfactory(['element' => '@height'])]
   public function getHeight() {
     return $this->height;
   }
@@ -93,7 +93,7 @@ class OpenSearchImage {
    *
    * @param   string url
    */
-  #[@xmlmapping(element= '.')]
+  #[@xmlmapping(['element' => '.')]]
   public function setUrl($url) {
     $this->url= $url;
   }
@@ -103,7 +103,7 @@ class OpenSearchImage {
    *
    * @return  string
    */
-  #[@xmlfactory(element= '.')]
+  #[@xmlfactory(['element' => '.')]]
   public function getUrl() {
     return $this->url;
   }

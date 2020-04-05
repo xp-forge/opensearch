@@ -27,7 +27,7 @@ class OpenSearchQuery {
    *
    * @param   string role
    */
-  #[@xmlmapping(element= '@role')]
+  #[@xmlmapping(['element' => '@role'])]
   public function setRole($role) {
     $this->role= $role;
   }
@@ -37,7 +37,7 @@ class OpenSearchQuery {
    *
    * @return  string
    */
-  #[@xmlfactory(element= '@role')]
+  #[@xmlfactory(['element' => '@role'])]
   public function getRole() {
     return $this->role;
   }
@@ -47,7 +47,7 @@ class OpenSearchQuery {
    *
    * @param   string searchTerms
    */
-  #[@xmlmapping(element= '@searchTerms')]
+  #[@xmlmapping(['element' => '@searchTerms'])]
   public function setSearchTerms($searchTerms) {
     $this->searchTerms= $searchTerms;
   }
@@ -57,7 +57,7 @@ class OpenSearchQuery {
    *
    * @return  string
    */
-  #[@xmlfactory(element= '@searchTerms')]
+  #[@xmlfactory(['element' => '@searchTerms'])]
   public function getSearchTerms() {
     return $this->searchTerms;
   }
