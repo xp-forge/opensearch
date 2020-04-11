@@ -3,6 +3,10 @@ opensearch ChangeLog
 
 ## ?.?.? / ????-??-??
 
+## 4.0.2 / 2020-04-11
+
+* Made compatible with newer, PHP 7 only libraries - @thekid
+
 ## 4.0.1 / 2020-04-05
 
 * Implemented RFC #335: Remove deprecated key/value pair annotation syntax
