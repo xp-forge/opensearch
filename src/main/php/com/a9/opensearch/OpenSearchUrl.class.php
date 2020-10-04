@@ -1,11 +1,13 @@
 <?php namespace com\a9\opensearch;
 
+use xml\{Xmlns, Xmlfactory, Xmlmapping};
+
 /**
  * Represents an open search URL
  *
  * @see      xp://com.a9.opensearch.OpenSearchDescription
  */
-#[@xmlns(['s' => 'http://a9.com/-/spec/opensearch/1.1/'])]
+#[Xmlns(s: 'http://a9.com/-/spec/opensearch/1.1/')]
 class OpenSearchUrl {
   protected
     $type       = '',
@@ -27,7 +29,7 @@ class OpenSearchUrl {
    *
    * @param   string type
    */
-  #[@xmlmapping(['element' => '@type'])]
+  #[Xmlmapping(['element' => '@type'])]
   public function setType($type) {
     $this->type= $type;
   }
@@ -37,7 +39,7 @@ class OpenSearchUrl {
    *
    * @return  string
    */
-  #[@xmlfactory(['element' => '@type'])]
+  #[Xmlfactory(['element' => '@type'])]
   public function getType() {
     return $this->type;
   }
@@ -47,7 +49,7 @@ class OpenSearchUrl {
    *
    * @param   string template
    */
-  #[@xmlmapping(['element' => '@template'])]
+  #[Xmlmapping(['element' => '@template'])]
   public function setTemplate($template) {
     $this->template= $template;
   }
@@ -57,7 +59,7 @@ class OpenSearchUrl {
    *
    * @return  string
    */
-  #[@xmlfactory(['element' => '@template'])]
+  #[Xmlfactory(['element' => '@template'])]
   public function getTemplate() {
     return $this->template;
   }

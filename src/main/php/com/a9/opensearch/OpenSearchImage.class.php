@@ -1,11 +1,13 @@
 <?php namespace com\a9\opensearch;
 
+use xml\{Xmlns, Xmlfactory, Xmlmapping};
+
 /**
  * Represents an open search Image
  *
  * @see      xp://com.a9.opensearch.OpenSearchDescription
  */
-#[@xmlns(['s' => 'http://a9.com/-/spec/opensearch/1.1/'])]
+#[Xmlns(s: 'http://a9.com/-/spec/opensearch/1.1/')]
 class OpenSearchImage {
   protected
     $type       = null,
@@ -33,7 +35,7 @@ class OpenSearchImage {
    *
    * @param   string type
    */
-  #[@xmlmapping(['element' => '@type'])]
+  #[Xmlmapping(['element' => '@type'])]
   public function setType($type) {
     $this->type= $type;
   }
@@ -43,7 +45,7 @@ class OpenSearchImage {
    *
    * @return  string
    */
-  #[@xmlfactory(['element' => '@type'])]
+  #[Xmlfactory(['element' => '@type'])]
   public function getType() {
     return $this->type;
   }
@@ -53,7 +55,7 @@ class OpenSearchImage {
    *
    * @param   int width
    */
-  #[@xmlmapping(['element' => '@width', 'type' => 'int'])]
+  #[Xmlmapping(['element' => '@width', 'type' => 'int'])]
   public function setWidth($width) {
     $this->width= $width;
   }
@@ -63,7 +65,7 @@ class OpenSearchImage {
    *
    * @return  int
    */
-  #[@xmlfactory(['element' => '@width'])]
+  #[Xmlfactory(['element' => '@width'])]
   public function getWidth() {
     return $this->width;
   }
@@ -73,7 +75,7 @@ class OpenSearchImage {
    *
    * @param   int height
    */
-  #[@xmlmapping(['element' => '@height'], type= 'int')]
+  #[Xmlmapping(['element' => '@height'], type= 'int')]
   public function setHeight($height) {
     $this->height= $height;
   }
@@ -83,7 +85,7 @@ class OpenSearchImage {
    *
    * @return  int
    */
-  #[@xmlfactory(['element' => '@height'])]
+  #[Xmlfactory(['element' => '@height'])]
   public function getHeight() {
     return $this->height;
   }
@@ -93,7 +95,7 @@ class OpenSearchImage {
    *
    * @param   string url
    */
-  #[@xmlmapping(['element' => '.')]]
+  #[Xmlmapping(['element' => '.')]]
   public function setUrl($url) {
     $this->url= $url;
   }
@@ -103,7 +105,7 @@ class OpenSearchImage {
    *
    * @return  string
    */
-  #[@xmlfactory(['element' => '.')]]
+  #[Xmlfactory(['element' => '.')]]
   public function getUrl() {
     return $this->url;
   }

@@ -2,13 +2,14 @@
 
 use lang\types\ArrayList;
 use util\collections\Vector;
+use xml\{Xmlns, Xmlfactory, Xmlmapping};
 
 /**
  * Wrap OpenSearch XML description file
  *
  * @see   http://www.opensearch.org/Specifications/OpenSearch/1.1
  */
-#[@xmlns(['s' => 'http://a9.com/-/spec/opensearch/1.1/'])]
+#[Xmlns(s: 'http://a9.com/-/spec/opensearch/1.1/')]
 class OpenSearchDescription {
   protected
     $shortName        = null,
@@ -40,7 +41,7 @@ class OpenSearchDescription {
    *
    * @param   string shortName
    */
-  #[@xmlmapping(['element' => 's:ShortName'])]
+  #[Xmlmapping(['element' => 's:ShortName'])]
   public function setShortName($shortName) {
     $this->shortName= $shortName;
   }
@@ -50,7 +51,7 @@ class OpenSearchDescription {
    *
    * @return  string
    */
-  #[@xmlfactory(['element' => 's:ShortName'])]
+  #[Xmlfactory(['element' => 's:ShortName'])]
   public function getShortName() {
     return $this->shortName;
   }
@@ -60,7 +61,7 @@ class OpenSearchDescription {
    *
    * @param   string longName
    */
-  #[@xmlmapping(['element' => 's:LongName'])]
+  #[Xmlmapping(['element' => 's:LongName'])]
   public function setLongName($longName) {
     $this->longName= $longName;
   }
@@ -70,7 +71,7 @@ class OpenSearchDescription {
    *
    * @return  string
    */
-  #[@xmlfactory(['element' => 's:LongName'])]
+  #[Xmlfactory(['element' => 's:LongName'])]
   public function getLongName() {
     return $this->longName;
   }
@@ -80,7 +81,7 @@ class OpenSearchDescription {
    *
    * @param   string developer
    */
-  #[@xmlmapping(['element' => 's:Developer'])]
+  #[Xmlmapping(['element' => 's:Developer'])]
   public function setDeveloper($developer) {
     $this->developer= $developer;
   }
@@ -90,7 +91,7 @@ class OpenSearchDescription {
    *
    * @return  string
    */
-  #[@xmlfactory(['element' => 's:Developer'])]
+  #[Xmlfactory(['element' => 's:Developer'])]
   public function getDeveloper() {
     return $this->developer;
   }
@@ -100,7 +101,7 @@ class OpenSearchDescription {
    *
    * @param   string attribution
    */
-  #[@xmlmapping(['element' => 's:Attribution'])]
+  #[Xmlmapping(['element' => 's:Attribution'])]
   public function setAttribution($attribution) {
     $this->attribution= $attribution;
   }
@@ -110,7 +111,7 @@ class OpenSearchDescription {
    *
    * @return  string
    */
-  #[@xmlfactory(['element' => 's:Attribution'])]
+  #[Xmlfactory(['element' => 's:Attribution'])]
   public function getAttribution() {
     return $this->attribution;
   }
@@ -121,7 +122,7 @@ class OpenSearchDescription {
    * @see     xp://com.a9.opensearch.SyndicationRight
    * @param   string syndicationRight one of the SyndicationRight::* class constants
    */
-  #[@xmlmapping(['element' => 's:SyndicationRight'])]
+  #[Xmlmapping(['element' => 's:SyndicationRight'])]
   public function setSyndicationRight($syndicationRight) {
     $this->syndicationRight= strtolower($syndicationRight);   // Case-insensitive by spec
   }
@@ -131,7 +132,7 @@ class OpenSearchDescription {
    *
    * @return  string
    */
-  #[@xmlfactory(['element' => 's:SyndicationRight'])]
+  #[Xmlfactory(['element' => 's:SyndicationRight'])]
   public function getSyndicationRight() {
     return $this->syndicationRight;
   }
@@ -141,7 +142,7 @@ class OpenSearchDescription {
    *
    * @param   string language
    */
-  #[@xmlmapping(['element' => 's:Language'])]
+  #[Xmlmapping(['element' => 's:Language'])]
   public function addLanguage($language) {
     $this->languages[$language]= true;
   }
@@ -160,7 +161,7 @@ class OpenSearchDescription {
    *
    * @return  lang.types.ArrayList<string>
    */
-  #[@xmlfactory(['element' => 's:Language'])]
+  #[Xmlfactory(['element' => 's:Language'])]
   public function getLanguages() {
     return new ArrayList(array_values($this->languages));
   }
@@ -170,7 +171,7 @@ class OpenSearchDescription {
    *
    * @param   string description
    */
-  #[@xmlmapping(['element' => 's:Description'])]
+  #[Xmlmapping(['element' => 's:Description'])]
   public function setDescription($description) {
     $this->description= $description;
   }
@@ -180,7 +181,7 @@ class OpenSearchDescription {
    *
    * @return  string
    */
-  #[@xmlfactory(['element' => 's:Description'])]
+  #[Xmlfactory(['element' => 's:Description'])]
   public function getDescription() {
     return $this->description;
   }
@@ -190,7 +191,7 @@ class OpenSearchDescription {
    *
    * @param   string tags
    */
-  #[@xmlmapping(['element' => 's:Tags'])]
+  #[Xmlmapping(['element' => 's:Tags'])]
   public function setTags($tags) {
     $this->tags= $tags;
   }
@@ -200,7 +201,7 @@ class OpenSearchDescription {
    *
    * @return  string
    */
-  #[@xmlfactory(['element' => 's:Tags'])]
+  #[Xmlfactory(['element' => 's:Tags'])]
   public function getTags() {
     return $this->tags;
   }
@@ -210,7 +211,7 @@ class OpenSearchDescription {
    *
    * @param   string contact
    */
-  #[@xmlmapping(['element' => 's:Contact'])]
+  #[Xmlmapping(['element' => 's:Contact'])]
   public function setContact($contact) {
     $this->contact= $contact;
   }
@@ -220,7 +221,7 @@ class OpenSearchDescription {
    *
    * @return  string
    */
-  #[@xmlfactory(['element' => 's:Contact'])]
+  #[Xmlfactory(['element' => 's:Contact'])]
   public function getContact() {
     return $this->contact;
   }
@@ -230,7 +231,7 @@ class OpenSearchDescription {
    *
    * @param   com.a9.opensearch.OpenSearchImage image
    */
-  #[@xmlmapping(['element' => 's:Image', 'class' => 'com.a9.opensearch.OpenSearchImage'])]
+  #[Xmlmapping(['element' => 's:Image', 'class' => 'com.a9.opensearch.OpenSearchImage'])]
   public function setImage($image) {
     $this->image= $image;
   }
@@ -240,7 +241,7 @@ class OpenSearchDescription {
    *
    * @return  com.a9.opensearch.OpenSearchImage
    */
-  #[@xmlfactory(['element' => 's:Image'])]
+  #[Xmlfactory(['element' => 's:Image'])]
   public function getImage() {
     return $this->image;
   }
@@ -251,7 +252,7 @@ class OpenSearchDescription {
    * @param   com.a9.opensearch.OpenSearchQuery query
    * @return  com.a9.opensearch.OpenSearchQuery The added query
    */
-  #[@xmlmapping(['element' => 's:Query', 'class' => 'com.a9.opensearch.OpenSearchQuery'])]
+  #[Xmlmapping(['element' => 's:Query', 'class' => 'com.a9.opensearch.OpenSearchQuery'])]
   public function addQuery($query) {
     $this->queries->add($query);
     return $query;
@@ -262,7 +263,7 @@ class OpenSearchDescription {
    *
    * @return  util.collections.Vector<com.a9.opensearch.OpenSearchQuery>
    */
-  #[@xmlfactory(['element' => 's:Query'])]
+  #[Xmlfactory(['element' => 's:Query'])]
   public function getQueries() {
     return $this->queries;
   }
@@ -309,7 +310,7 @@ class OpenSearchDescription {
    *
    * @param   mixed adultContent either a string or a bool
    */
-  #[@xmlmapping(['element' => 's:AdultContent'])]
+  #[Xmlmapping(['element' => 's:AdultContent'])]
   public function setAdultContent($adultContent) {
     if (is_string($adultContent)) {
       $this->adultContent= !in_array($adultContent, ['false', '0', 'no']);
@@ -323,7 +324,7 @@ class OpenSearchDescription {
    *
    * @return  string
    */
-  #[@xmlfactory(['element' => 's:AdultContent'])]
+  #[Xmlfactory(['element' => 's:AdultContent'])]
   public function getAdultContent() {
     return $this->adultContent ? 'true' : 'false';
   }
@@ -342,7 +343,7 @@ class OpenSearchDescription {
    *
    * @param   lang.Object inputEncoding
    */
-  #[@xmlmapping(['element' => 's:InputEncoding'])]
+  #[Xmlmapping(['element' => 's:InputEncoding'])]
   public function setInputEncoding($inputEncoding) {
     $this->inputEncoding= $inputEncoding;
   }
@@ -352,7 +353,7 @@ class OpenSearchDescription {
    *
    * @return  lang.Object
    */
-  #[@xmlfactory(['element' => 's:InputEncoding'])]
+  #[Xmlfactory(['element' => 's:InputEncoding'])]
   public function getInputEncoding() {
     return $this->inputEncoding;
   }
@@ -362,7 +363,7 @@ class OpenSearchDescription {
    *
    * @param   lang.Object outputEncoding
    */
-  #[@xmlmapping(['element' => 's:OutputEncoding'])]
+  #[Xmlmapping(['element' => 's:OutputEncoding'])]
   public function setOutputEncoding($outputEncoding) {
     $this->outputEncoding= $outputEncoding;
   }
@@ -372,7 +373,7 @@ class OpenSearchDescription {
    *
    * @return  lang.Object
    */
-  #[@xmlfactory(['element' => 's:OutputEncoding'])]
+  #[Xmlfactory(['element' => 's:OutputEncoding'])]
   public function getOutputEncoding() {
     return $this->outputEncoding;
   }
@@ -383,7 +384,7 @@ class OpenSearchDescription {
    * @param   com.a9.opensearch.OpenSearchUrl url
    * @return  com.a9.opensearch.OpenSearchUrl the added url
    */
-  #[@xmlmapping(['element' => 's:Url', 'class' => 'com.a9.opensearch.OpenSearchUrl'])]
+  #[Xmlmapping(['element' => 's:Url', 'class' => 'com.a9.opensearch.OpenSearchUrl'])]
   public function addUrl($url) {
     $this->urls->add($url);
     return $url;
@@ -431,7 +432,7 @@ class OpenSearchDescription {
    *
    * @return   util.collections.Vector<com.a9.opensearch.OpenSearchUrl> urls
    */
-  #[@xmlfactory(['element' => 's:Url'])]
+  #[Xmlfactory(['element' => 's:Url'])]
   public function getUrls() {
     return $this->urls;
   }

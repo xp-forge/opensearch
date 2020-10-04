@@ -3,6 +3,11 @@ opensearch ChangeLog
 
 ## ?.?.? / ????-??-??
 
+## 5.0.0 / 2020-10-04
+
+* **Heads up: Requires XP 10.2 minimum!** - @thekid
+* Convert annotations to PHP 8 attributes - @thekid
+
 ## 4.0.2 / 2020-04-11
 
 * Made compatible with newer, PHP 7 only libraries - @thekid

@@ -1,11 +1,13 @@
 <?php namespace com\a9\opensearch;
 
+use xml\{Xmlns, Xmlfactory, Xmlmapping};
+
 /**
  * Represents an open search Query
  *
  * @see      xp://com.a9.opensearch.OpenSearchDescription
  */
-#[@xmlns(['s' => 'http://a9.com/-/spec/opensearch/1.1/'])]
+#[Xmlns(s: 'http://a9.com/-/spec/opensearch/1.1/')]
 class OpenSearchQuery {
   protected
     $role        = null,
@@ -27,7 +29,7 @@ class OpenSearchQuery {
    *
    * @param   string role
    */
-  #[@xmlmapping(['element' => '@role'])]
+  #[Xmlmapping(['element' => '@role'])]
   public function setRole($role) {
     $this->role= $role;
   }
@@ -37,7 +39,7 @@ class OpenSearchQuery {
    *
    * @return  string
    */
-  #[@xmlfactory(['element' => '@role'])]
+  #[Xmlfactory(['element' => '@role'])]
   public function getRole() {
     return $this->role;
   }
@@ -47,7 +49,7 @@ class OpenSearchQuery {
    *
    * @param   string searchTerms
    */
-  #[@xmlmapping(['element' => '@searchTerms'])]
+  #[Xmlmapping(['element' => '@searchTerms'])]
   public function setSearchTerms($searchTerms) {
     $this->searchTerms= $searchTerms;
   }
@@ -57,7 +59,7 @@ class OpenSearchQuery {
    *
    * @return  string
    */
-  #[@xmlfactory(['element' => '@searchTerms'])]
+  #[Xmlfactory(['element' => '@searchTerms'])]
   public function getSearchTerms() {
     return $this->searchTerms;
   }
