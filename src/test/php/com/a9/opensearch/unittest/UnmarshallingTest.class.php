@@ -1,7 +1,7 @@
 <?php namespace com\a9\opensearch\unittest;
 
-use com\a9\opensearch\OpenSearchDescription;
-use com\a9\opensearch\OpenSearchUrl;
+use com\a9\opensearch\{OpenSearchDescription, OpenSearchUrl};
+use unittest\Test;
 use xml\meta\Unmarshaller;
 use xml\parser\StringInputSource;
 
@@ -25,32 +25,32 @@ class UnmarshallingTest extends \unittest\TestCase {
     );
   }
 
-  #[@test]
+  #[Test]
   public function short_name() {
     $this->assertEquals('Web Search', $this->unmarshal('simple')->getShortName());
   }
 
-  #[@test]
+  #[Test]
   public function description() {
     $this->assertEquals('Use Example.com to search the Web.', $this->unmarshal('simple')->getDescription());
   }
 
-  #[@test]
+  #[Test]
   public function tags() {
     $this->assertEquals('example web', $this->unmarshal('simple')->getTags());
   }
 
-  #[@test]
+  #[Test]
   public function contact() {
     $this->assertEquals('admin@example.com', $this->unmarshal('simple')->getContact());
   }
 
-  #[@test]
+  #[Test]
   public function has_one_url() {
     $this->assertEquals(1, $this->unmarshal('simple')->numUrls());
   }
 
-  #[@test]
+  #[Test]
   public function urls() {
     $this->assertInstanceOf(
       'util.collections.Vector<com.a9.opensearch.OpenSearchUrl>',
@@ -58,7 +58,7 @@ class UnmarshallingTest extends \unittest\TestCase {
     );
   }
 
-  #[@test]
+  #[Test]
   public function first_url() {
     $this->assertInstanceOf(
       OpenSearchUrl::class,
@@ -66,7 +66,7 @@ class UnmarshallingTest extends \unittest\TestCase {
     );
   }
 
-  #[@test]
+  #[Test]
   public function first_urls_type() {
     $this->assertEquals(
       'application/rss+xml',
@@ -74,7 +74,7 @@ class UnmarshallingTest extends \unittest\TestCase {
     );
   }
 
-  #[@test]
+  #[Test]
   public function first_urls_template() {
     $this->assertEquals(
       'http://example.com/?q={searchTerms}&pw={startPage?}&format=rss',
